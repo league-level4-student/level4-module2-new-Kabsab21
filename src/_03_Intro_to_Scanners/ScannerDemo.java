@@ -25,7 +25,7 @@ public class ScannerDemo {
          * are running your program or the input/output stream you are using.
          */
 
-        
+        Scanner obj = new Scanner(System.in);
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -41,9 +41,12 @@ public class ScannerDemo {
          * Note: Don't forget to save the results of next() or nextLine() into a
          * String variable.
          */
-
-        
-        
+      
+        System.out.println("whats your name?");
+         String s = obj.nextLine();
+         System.out.println(s+" is awesome");
+       
+   
         /*
          * 3. Ask the user for their age in the console. Then use the Scanner to
          * take their age as an int and save it into an int variable.
@@ -51,7 +54,9 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
-
+         System.out.println("whats your age?");
+         int sss = obj.nextInt();
+         System.out.println(sss+" is age");
         
         
         /*
