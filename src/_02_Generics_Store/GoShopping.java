@@ -28,6 +28,18 @@ public class GoShopping {
 //		candy.showCart();
 //		cerial.showCart();
 //		
+//		Cart<Candy> candy = new Cart<Candy>();
+//		Cart<Cereal> cereal = new Cart<Cereal>();
+//		
+//		candy.add(new Candy());
+//		candy.add(new Candy());
+//		candy.add(new Candy());
+//		cereal.add(new Cereal());
+//		cereal.add(new Cereal());
+//		cereal.add(new Cereal());
+//		
+//		candy.showCart();
+//		cereal.showCart();
 		// 6. Run the code
 		
 		// 7. Comment out the code you have so far

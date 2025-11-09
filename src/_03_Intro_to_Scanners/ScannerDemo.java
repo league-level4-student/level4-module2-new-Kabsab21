@@ -66,9 +66,13 @@ public class ScannerDemo {
          * Note: There are many methods similar to the one you used for int that
          * are capable of taking in primitive data types.
          */
-
+         System.out.println("what day is it, ( mm.dd )");
+         Double ssss = obj.nextDouble();
+         System.out.println(ssss+" is today");
         // 5.) Print the user's data to the console nicely formatted.
-
+         System.out.println( "name: "+s);
+         System.out.println( "age: "+sss);
+         System.out.println( "date: "+ssss);
         
         
         /*
@@ -77,7 +81,7 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
-
+         obj.close();
     }
 
 }
