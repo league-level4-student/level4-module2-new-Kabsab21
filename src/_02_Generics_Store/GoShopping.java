@@ -40,25 +40,30 @@ public class GoShopping {
 //		
 //		candy.showCart();
 //		cereal.showCart();
+//		
+//		Cart<Food> food = new Cart<Food>();
+//		food.add(new Candy());
+//		food.add(new Cereal());
+//		food.showCart();
 		// 6. Run the code
 		
 		// 7. Comment out the code you have so far
 		
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
 		
-		Cart<Clothing> clothing = new Cart<Clothing>();
-		Cart<Toy> toy = new Cart<Toy>();
-		
-		clothing.add(new Clothing());
-		clothing.add(new Clothing());
-		clothing.add(new Clothing());
-		toy.add(new Toy());
-		toy.add(new Toy());
-		toy.add(new Toy());
-		
-		clothing.showCart();
-		toy.showCart();
-		
+//		Cart<Clothing> clothing = new Cart<Clothing>();
+//		Cart<Toy> toy = new Cart<Toy>();
+//		
+//		clothing.add(new Clothing());
+//		clothing.add(new Clothing());
+//		clothing.add(new Clothing());
+//		toy.add(new Toy());
+//		toy.add(new Toy());
+//		toy.add(new Toy());
+//		
+//		clothing.showCart();
+//		toy.showCart();
+//		
 		
 		
 		// Why are there errors?

@@ -1,5 +1,11 @@
 package _06_Console_Store;
 
+import java.util.Scanner;
+
+import _02_Generics_Store.Cart;
+import _02_Generics_Store.Cereal;
+import _02_Generics_Store.Food;
+
 public class ConsoleStore {
 
     /*
@@ -37,7 +43,34 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-
+    	Cart<Food> food = new Cart<Food>();
+    	
+    	String afford = "";
+    	int money = 5;
+    	boolean instore = false;
+    	 Scanner obj = new Scanner(System.in);
+    	 String ans = "";
+    	 System.out.println("Welcome to the Scanner-Generics shopping simulation! Would you like to enter the store?");
+    	 ans = obj.nextLine();
+    	instore = ans.equalsIgnoreCase("yes");
+    	 
+    	do {
+    		if( money >= 4) {
+    			afford = " You can afford all 4 items on the shelf!! Water ($1), Orange ($2), Apple ($3), Bread ($4).";
+    		} else if( money == 3) {
+    			afford = " You can afford 3 items on the shelf!! Water ($1), Orange ($2), Apple ($3).";
+    		} else if( money == 2) {
+    			afford = " You can afford 2 items on the shelf!! Water ($1), Orange ($2).";
+    		} else if( money == 1) {
+    			afford = " You can afford 1 items on the shelf!! Water ($1).";
+    		} 
+    		System.out.println("you have $"+money+" to your disposal. and have "+food.length()+" objects in your cart."+afford);
+    		System.out.println("would you like to add something to your cart ( A ), remove something from your cart ( R ), or leave the store ( L )?");
+    		 ans = obj.nextLine();
+    		 instore = !( ans.equalsIgnoreCase("L")) ;
+    	}while( instore == true );
+    	
+    	obj.close();
     }
 
 }
