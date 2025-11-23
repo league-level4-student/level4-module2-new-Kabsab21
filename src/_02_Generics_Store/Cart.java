@@ -14,7 +14,8 @@ import javax.swing.JPanel;
 @SuppressWarnings("unchecked")
 public class Cart<T extends Food> {
     private T[] cart;
-
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
     public Cart() {
         cart = (T[]) new Food[5];
     }
@@ -33,8 +34,7 @@ public class Cart<T extends Food> {
 
     // Displays everything currently in the cart
     public void showCart() {
-        JFrame frame = new JFrame();
-        JPanel panel = new JPanel();
+        
         frame.add(panel);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,8 +49,17 @@ public class Cart<T extends Food> {
         frame.pack();
 
     }
+    public void closeCart() {
+    	frame.setVisible(false);
+    }
 
     public int length() {
-        return cart.length;
+    	int foodsize = 0;
+   	 for (int i = 0; i < cart.length; i++) {
+         if (cart[i] != null) {
+             foodsize=foodsize+1;
+         }
+	 }
+        return foodsize;
     }
 }

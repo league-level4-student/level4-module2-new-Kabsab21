@@ -5,6 +5,7 @@ import java.util.Scanner;
 import _02_Generics_Store.Cart;
 import _02_Generics_Store.Cereal;
 import _02_Generics_Store.Food;
+import _02_Generics_Store.Water;
 
 public class ConsoleStore {
 
@@ -43,7 +44,11 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
+    	
+    	
     	Cart<Food> food = new Cart<Food>();
+    	
+    
     	
     	String afford = "";
     	int money = 5;
@@ -53,8 +58,9 @@ public class ConsoleStore {
     	 System.out.println("Welcome to the Scanner-Generics shopping simulation! Would you like to enter the store?");
     	 ans = obj.nextLine();
     	instore = ans.equalsIgnoreCase("yes");
-    	 
+    	
     	do {
+    		 food.showCart();
     		if( money >= 4) {
     			afford = " You can afford all 4 items on the shelf!! Water ($1), Orange ($2), Apple ($3), Bread ($4).";
     		} else if( money == 3) {
@@ -68,9 +74,51 @@ public class ConsoleStore {
     		System.out.println("would you like to add something to your cart ( A ), remove something from your cart ( R ), or leave the store ( L )?");
     		 ans = obj.nextLine();
     		 instore = !( ans.equalsIgnoreCase("L")) ;
+    		if( ans.equalsIgnoreCase("A") ) {
+    			System.out.println("which object would you like to buy?"+afford+" none ($0)");
+    			 ans = obj.nextLine();
+    			if( ans.equalsIgnoreCase("$1") && money >= 1) {
+    				food.add(new Water());
+        			money=money-1;
+        		} else if( ans.equalsIgnoreCase("$2") && money >= 2) {
+        			money=money-2;
+        		} else if( ans.equalsIgnoreCase("$3") && money >= 3) {
+        			money=money-3;
+        		} else if( ans.equalsIgnoreCase("$4") && money >= 4) {
+        			money=money-4;
+        		} else if( ans.equalsIgnoreCase("$0")) {
+        			
+        		} else {
+        			System.out.println("you cannot afford this object!!!");
+        		}
+    		}
+    		if( ans.equalsIgnoreCase("R") ) {
+    			System.out.println("which object would you like to remove?"+afford+" none ($0)");
+    			 ans = obj.nextLine();
+    			if( ans.equalsIgnoreCase("$1") && money >= 1) {
+        			money=money-1;
+        		} else if( ans.equalsIgnoreCase("$2") && money >= 2) {
+        			money=money-2;
+        		} else if( ans.equalsIgnoreCase("$3") && money >= 3) {
+        			money=money-3;
+        		} else if( ans.equalsIgnoreCase("$4") && money >= 4) {
+        			money=money-4;
+        		} else if( ans.equalsIgnoreCase("$0")) {
+        			
+        		} else {
+        			System.out.println("you cannot afford this object!!!");
+        		}
+    			food.closeCart();
+    		}
+    		 
+    		 
+    		 
+    		 
     	}while( instore == true );
     	
     	obj.close();
     }
+    
+
 
 }
