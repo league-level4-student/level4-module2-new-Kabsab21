@@ -2,9 +2,12 @@ package _06_Console_Store;
 
 import java.util.Scanner;
 
+import _02_Generics_Store.Apple;
+import _02_Generics_Store.Bread;
 import _02_Generics_Store.Cart;
 import _02_Generics_Store.Cereal;
 import _02_Generics_Store.Food;
+import _02_Generics_Store.Orange;
 import _02_Generics_Store.Water;
 
 public class ConsoleStore {
@@ -44,7 +47,10 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-    	
+    	Water n = new Water();
+    	Orange ns = new Orange();
+    	Apple nss = new Apple();
+    	Bread nsss = new Bread();
     	
     	Cart<Food> food = new Cart<Food>();
     	
@@ -59,7 +65,7 @@ public class ConsoleStore {
     	 ans = obj.nextLine();
     	instore = ans.equalsIgnoreCase("yes");
     	
-    	do {
+    	while(instore) {
     		 food.showCart();
     		if( money >= 4) {
     			afford = " You can afford all 4 items on the shelf!! Water ($1), Orange ($2), Apple ($3), Bread ($4).";
@@ -78,13 +84,17 @@ public class ConsoleStore {
     			System.out.println("which object would you like to buy?"+afford+" none ($0)");
     			 ans = obj.nextLine();
     			if( ans.equalsIgnoreCase("$1") && money >= 1) {
-    				food.add(new Water());
+    			
+    				food.add(n);
         			money=money-1;
         		} else if( ans.equalsIgnoreCase("$2") && money >= 2) {
+        			food.add(ns);
         			money=money-2;
         		} else if( ans.equalsIgnoreCase("$3") && money >= 3) {
+        			food.add(nss);
         			money=money-3;
         		} else if( ans.equalsIgnoreCase("$4") && money >= 4) {
+        			food.add(nsss);
         			money=money-4;
         		} else if( ans.equalsIgnoreCase("$0")) {
         			
@@ -95,14 +105,18 @@ public class ConsoleStore {
     		if( ans.equalsIgnoreCase("R") ) {
     			System.out.println("which object would you like to remove?"+afford+" none ($0)");
     			 ans = obj.nextLine();
-    			if( ans.equalsIgnoreCase("$1") && money >= 1) {
-        			money=money-1;
-        		} else if( ans.equalsIgnoreCase("$2") && money >= 2) {
-        			money=money-2;
-        		} else if( ans.equalsIgnoreCase("$3") && money >= 3) {
-        			money=money-3;
-        		} else if( ans.equalsIgnoreCase("$4") && money >= 4) {
-        			money=money-4;
+    			if( ans.equalsIgnoreCase("$1") ) {
+    				food.remove(n);
+        			money=money+1;
+        		} else if( ans.equalsIgnoreCase("$2")) {
+        			food.remove(ns);
+        			money=money+2;
+        		} else if( ans.equalsIgnoreCase("$3")) {
+        			food.remove(nss);
+        			money=money+3;
+        		} else if( ans.equalsIgnoreCase("$4")) {
+        			food.remove(nsss);
+        			money=money+4;
         		} else if( ans.equalsIgnoreCase("$0")) {
         			
         		} else {
@@ -114,7 +128,7 @@ public class ConsoleStore {
     		 
     		 
     		 
-    	}while( instore == true );
+    	}
     	
     	obj.close();
     }

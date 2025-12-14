@@ -31,6 +31,17 @@ public class Cart<T extends Food> {
         JOptionPane.showMessageDialog(null,
                 "Your cart is full!\nNo more than 5 items");
     }
+    
+    public void remove(T item) {
+        for (int i = 0; i < cart.length; i++) {
+            if (cart[i] == item) {
+                cart[i] = null;
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(null,
+                "Your cart is full!\nNo more than 5 items");
+    }
 
     // Displays everything currently in the cart
     public void showCart() {
